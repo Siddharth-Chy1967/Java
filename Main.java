@@ -1,43 +1,41 @@
-import java.util.Scanner;
-<<<<<<< HEAD
 import java.util.ArrayList;
-import java.util.Array;
 
 public class Main{
     public static ArrayList<Integer> allLessThanMean(ArrayList<Integer> list){
         int sum = 0;
-        double mean = 0;
+        double mean = 0.0;
         ArrayList<Integer> allLess = new ArrayList<>();
         for(int values : list){
             sum += values;
         }
-        mean = sum / list.size();
+        mean = (double)sum / list.size();
 
         for(int values : list){
-            if(mean > values){
+            if(values < mean){
                 allLess.add(values);
             }
         }
         
-        return values;
+        return allLess;
     }
     
     
     public static ArrayList<Double> distancesFromMean(ArrayList<Integer> list){
         int sum = 0;
-        double mean = 0;
+        double mean = 0.0;
         
         ArrayList<Double> distances = new ArrayList<>();
 
         for(int values : list){
             sum += values;
         }
-        mean = sum/ list.size();
+        mean = (double)sum/ list.size();
 
         for(int values : list){
             double distance = Math.abs(mean - values);
             distances.add(distance);
         }
+        return distances;
     }
     
     public static ArrayList<Integer> intersect(ArrayList<Integer> list1, ArrayList<Integer> list2){
@@ -53,7 +51,7 @@ public class Main{
     public static ArrayList<Integer> symmetricDiff(ArrayList<Integer> list1,ArrayList<Integer> list2){
         ArrayList<Integer> symmetricDiff = new ArrayList<>();
         for(int values : list1){
-            if(!list2.contains(values) && !list2.contains(values)){
+            if(!list2.contains(values) && !symmetricDiff.contains(values)){
                 symmetricDiff.add(values);
             }
         }
@@ -78,29 +76,22 @@ public class Main{
             }
             else if(list1.get(index1) > list2.get(index2)){
                 sorted.add(list2.get(index2));
+                index2++;
             }
         }
-    }
+
+            while(index1 <= list1.size()){
+                sorted.add(list1.get(index1));
+            }
+            while(index2 <= list2.size()){
+                sorted.add(list2.get(index2));
+            }
+            return sorted;
+        }
+        
+    
 
     public static void main(String[] args) {
         
     }
 }
-=======
-public class Main {
-    public static void main(String[] args){
-       Scanner scnr = new Scanner(System.in);
-       int[]arr = new int[10];
-       int size =  0;
-       System.out.println("Enter your numbers: ");
-       while(scnr.hasNextInt()){
-        if(size < arr.length){
-            arr[size] = scnr.nextInt();
-            size++;
-        }
-        System.out.println("Size is: " + size);
-       }
-    scnr.close();
-    }
-}
->>>>>>> parent of 5a92118 (Test)
