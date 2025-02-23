@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 
-public class Main{
+public class basicListImplementaion{
     public static ArrayList<Integer> allLessThanMean(ArrayList<Integer> list){
         int sum = 0;
         double mean = 0.0;
