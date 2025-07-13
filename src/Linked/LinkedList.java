@@ -2,6 +2,11 @@ package Linked;
 
 public class LinkedList {
     Node head;
+    private int size;
+
+    public LinkedList(){
+        this.size = 0;
+    }
 
     class Node{
         String data;
@@ -10,6 +15,7 @@ public class LinkedList {
         Node(String data){
             this.data = data;
             this.next = null;
+            size++;
         }
     }
 
@@ -31,6 +37,7 @@ public class LinkedList {
             return;
         }
 
+        
         Node currNode = head;
 
         while(currNode.next != null){
@@ -56,7 +63,7 @@ public class LinkedList {
         if(head == null){
             System.out.println("head empty");
         }
-
+        size--;
         head = head.next;
     }
 
@@ -64,7 +71,7 @@ public class LinkedList {
         if(head == null){
             System.out.println("head empty");
         }
-        
+        size--;
         if(head.next == null){  /*corner case
                                 if only one node in list */
             head = null;
@@ -78,5 +85,9 @@ public class LinkedList {
             lastNode = lastNode.next;
         }
         secondLastNode.next = null;
+    }
+
+    public int getSize(){
+        return size;
     }
 }
