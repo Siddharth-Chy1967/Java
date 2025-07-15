@@ -1,4 +1,4 @@
-package Linked;
+package pkg;
 
 public class LinkedList {
     Node head;
