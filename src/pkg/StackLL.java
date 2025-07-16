@@ -1,8 +1,6 @@
 package pkg;
 
-
-
-public class StackClass{
+public class StackLL{
 
     public static class Node{
         int data;
