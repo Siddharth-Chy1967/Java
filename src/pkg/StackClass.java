@@ -1,6 +1,6 @@
 package pkg;
 
-import java.awt.HeadlessException;
+
 
 public class StackClass{
 
