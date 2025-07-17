@@ -1,4 +1,3 @@
-import pkg.QueuesAL.*;
 import pkg.QueuesAL.Queue;
 
 public class implement {
