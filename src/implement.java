@@ -1,4 +1,5 @@
-import pkg.QueuesLL.Queue;
+import pkg.QueuesAL.*;
+import pkg.QueuesAL.Queue;
 
 public class implement {
     public static void main(String[] args) {
