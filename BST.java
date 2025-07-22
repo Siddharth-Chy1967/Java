@@ -66,7 +66,6 @@ public class BST{
         else{
             System.out.println("Not Found");
         }
-        System.out.println("Chuttarkuhul");
     }
 
 }
