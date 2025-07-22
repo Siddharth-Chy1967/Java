@@ -60,13 +60,13 @@ public class BST{
 
         inorder(root);
         System.out.println();
-        if(search(root, 6)){
+        if(search(root, 5)){
             System.out.println("Found!");
         }
         else{
             System.out.println("Not Found");
         }
-
+        System.out.println("Chuttarkuhul");
     }
 
 }
