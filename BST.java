@@ -1,5 +1,5 @@
 public class BST{
-    static class Node{
+    public static class Node{
         int data;
         Node left;
         Node right;
@@ -10,7 +10,6 @@ public class BST{
     }
 
     public static Node insert(Node root, int val){
-        
         if(root == null){
             root = new Node(val);
             return root;
@@ -19,14 +18,11 @@ public class BST{
         if(root.data > val){
             root.left = insert(root.left, val);
         }
- 
-        else{
+        else if(root.data < val){
             root.right = insert(root.right, val);
         }
-
         return root;
     }
-
     public static void inorder(Node root){
         if(root == null){
             return;
@@ -42,11 +38,12 @@ public class BST{
             return false;
         }
 
-        if(root.data == val){
-            return true;
-        }
-        else if(root.data > val){
+        if(root.data > val){
             return search(root.left, val);
+        }
+
+        else if(root.data == val){
+            return true;
         }
 
         else{
@@ -54,22 +51,22 @@ public class BST{
         }
     }
     public static void main(String[] args) {
-        int[] val = {5,3,7,9,1,2,4,8};
+        int[] val = {5,4,7,8,12,3,5,1};
         Node root = null;
 
-        for(int i = 0; i < val.length; i++){
+        for(int i = 0; i < val.length; ++i){
             root = insert(root, val[i]);
         }
-        
+
         inorder(root);
         System.out.println();
-
-        if(search(root, 1)){
+        if(search(root, 6)){
             System.out.println("Found!");
         }
-
         else{
-            System.out.println("Not found.");
+            System.out.println("Not Found");
         }
+
     }
+
 }
