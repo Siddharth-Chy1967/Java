@@ -64,7 +64,7 @@ public class BST{
             System.out.println("Found!");
         }
         else{
-            System.out.println("Not Found");
+            System.out.println("Not Found :( ");
         }
     }
 
