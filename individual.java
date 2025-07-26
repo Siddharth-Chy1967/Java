@@ -1,27 +1,48 @@
 import java.util.Arrays;
+import java.util.Random;
+
 public class individual {
+
     public static void main(String[] args) {
-        int[] num = {1,3,5,3,32,23,24,23};
-        int[] maxMin = evenAndOdd(num);
-        System.out.println(Arrays.toString(maxMin));
-    }
+        int [] arr = new int[15];
+        int size = 0;
+        Random rndm = new Random();
 
-
-    public static int[] evenAndOdd(int[] list){
-        int evenCount = 0;
-        int oddCount = 0;
-        int[] count = new int[2];
-        for(int values : list){
-            if(values % 2 == 0){
-                evenCount++;
-            }
-            else if(values % 2 != 0){
-                oddCount++;
-            }
+        for(int i = 0; i < 8; i++){
+            arr[i] = rndm.nextInt(9);
+            size++;
         }
+        System.out.println("\n" + Arrays.toString(arr) + size);
+        //adding a new element at 4th index(undordered)
+        
 
-        count[0] = oddCount;
-        count[1] = evenCount;
-        return count;
+        arr[4] = (int)(Math.random() * 2);    
+        System.out.println("\n" + Arrays.toString(arr) + size);
+        size = 0;
+        //ordered
+        for(int i = 0; i < 8; i++){
+            arr[i] = i * 2;
+            size++;
+        }
+        System.out.println("\n" + Arrays.toString(arr) + size);
+        
+
+//insert at 4th index for ordered [0, 2, 4, (6),^ (8), 10, 12, 14, (empty 8th)...], size = 8
+        int index = 4;
+        for(int i = size; i >= index; --i){
+            arr[i] = arr [i - 1];
+        }
+        arr [index] = 7;
+        size++;
+        System.out.println('\n' + Arrays.toString(arr) + size);
+
+        //removing from 5th index[0, 2, 4, 6, 7, (8), 10, 12, 14, ...]9
+        index = 5;
+        for(int i = index; i < size; ++i){
+            arr[i] = arr[i + 1];
+        }
+        size--;
+
+        System.out.println('\n' + Arrays.toString(arr) + size);
     }
 }
